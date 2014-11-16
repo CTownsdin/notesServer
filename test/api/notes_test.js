@@ -15,13 +15,13 @@ describe('NotesServer user login testing', function() {
     var aJWT;
 
     // NOTE TO TESTER, manually incriment useremail each time for easy new user testing !
-    //
-    // TODO:  add something that drops the DB between tests, to make Travis CI happy !
+
+
 
     it('should create a new user', function (done) {
         chai.request('http://localhost:3000')
         .post('/api/users')
-        .send({email: 'JohnSmith796@example.com', password: 'S0methingAw3some!'})
+        .send({email: 'JohnSmith906@example.com', password: 'S0methingAw3some!'})
         .end(function (err, res) {
             expect(err).to.be.null;
             expect(res.body).to.have.property('jwt');
@@ -87,7 +87,6 @@ describe('NotesServer user login testing', function() {
             expect(res.body.msg).to.eql('success!');
             done();
         });
-
     });
 
 });
